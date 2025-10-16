@@ -1,237 +1,102 @@
-# 🚀 Professional 3D Portfolio with GSAP
+# 🚀 Abish R – Professional Portfolio (GSAP + Vanilla JS)
 
-A stunning, enterprise-grade portfolio website featuring cutting-edge 3D animations, smooth GSAP transitions, and modern web technologies. Built to MNC (Multinational Corporation) standards with exceptional performance and user experience.
+Modern, responsive portfolio with polished animations, clean UI, and a working contact form (Google Apps Script). Built with semantic HTML, CSS custom properties, and GSAP.
 
-## ✨ Features
+## ✨ What’s Included
 
-### 🎨 Visual Excellence
-- **3D Animations**: Immersive 3D cube, floating particles, and geometric shapes
-- **Advanced GSAP**: Smooth scroll triggers, timeline animations, and interactive effects
-- **Modern Design**: Glass morphism, gradient backgrounds, and professional typography
-- **Responsive Layout**: Perfect display across all devices and screen sizes
+- **Sections**: `Hero`, `About`, `Projects`, `Experience`, `Skills`, `Contact`, `Footer`
+- **Animations (GSAP)**: load-in transitions, scroll-triggered reveals, parallax, button ripple/click effects
+- **Design**: gradients, glassmorphism, cards, icons (Font Awesome), Inter font
+- **Responsive**: mobile viewport, touch-friendly, fixed-navbar offsets, mobile-safe backgrounds
+- **Contact Form**: validation, loading state, success modal, optional Google Apps Script email delivery
 
-### 🚀 Performance Optimized
-- **Lightning Fast**: Optimized animations with 60fps performance
-- **Mobile Optimized**: Reduced complexity on mobile devices for better performance
-- **Accessibility**: Full keyboard navigation and screen reader support
-- **SEO Ready**: Semantic HTML and meta tags for search engine optimization
+## 🛠 Tech Stack
 
-### 🎯 Interactive Elements
-- **Custom Cursor**: Blend mode cursor with hover effects
-- **Smooth Scrolling**: Buttery smooth navigation between sections
-- **Hover Animations**: 3D card transforms and interactive elements
-- **Loading Animation**: Professional loading screen with progress indicator
+- HTML5, CSS3, Vanilla JavaScript
+- GSAP 3 (ScrollTrigger, ScrollTo, TextPlugin) via CDN
+- Google Fonts (Inter), Font Awesome via CDN
 
-### 🛠️ Technical Stack
-- **HTML5**: Semantic markup with accessibility features
-- **CSS3**: Advanced 3D transforms, custom properties, and modern layouts
-- **GSAP**: Professional animation library with ScrollTrigger
-- **Vanilla JavaScript**: No framework dependencies for maximum performance
-
-## 🏗️ Project Structure
+## 📂 Structure
 
 ```
 portfolio/
-├── index.html          # Main HTML structure
-├── styles.css          # Complete CSS with 3D animations
-├── script.js           # Advanced GSAP animations
-├── README.md           # Project documentation
-└── package.json        # Project configuration
+├─ index.html          # Markup and sections
+├─ styles.css          # Design system, layout, responsive rules
+├─ script.js           # GSAP animations and interactions
+├─ image/Abish.jpg     # Profile image
+├─ README.md           # This file
+└─ package.json        # Dev scripts (serve, build, deploy)
 ```
 
-## 🚀 Quick Start
+## ▶️ Run Locally
 
-### Option 1: Direct Browser
-1. Clone or download the project files
-2. Open `index.html` in a modern web browser
-3. Enjoy the stunning 3D portfolio!
-
-### Option 2: Local Server (Recommended)
+Using Node (recommended):
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve .
-
-# Using PHP
-php -S localhost:8000
+npm install
+npm run start           # serve on http://localhost:8000
+# or
+npm run dev             # live-reload on http://localhost:8000/index.html
 ```
 
-Then visit `http://localhost:8000` in your browser.
+Or open `index.html` directly in a modern browser.
 
-## 🎨 Customization
+## 🔧 Build, Audit, Deploy
 
-### Colors
-Modify the CSS custom properties in `styles.css`:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    --accent-color: #06b6d4;
-    /* Add your brand colors */
-}
-```
+From `package.json`:
+- `npm run build` – minify CSS/JS into `dist/` and optimize images
+- `npm run lighthouse` – generate Lighthouse report
+- `npm run deploy` – build then deploy to Vercel (adjust as needed)
+- `npm run lint` / `npm run format` – ESLint and Prettier
 
-### Content
-Update the HTML content in `index.html`:
-- Replace placeholder text with your information
-- Add your project details and images
-- Update contact information
-- Modify skill levels and technologies
+Note: the image optimization script expects `images/*`; this project uses `image/` for the profile photo.
 
-### Animations
-Customize GSAP animations in `script.js`:
+## ✍️ Content to Update
+
+- `index.html`
+  - Name, role, about text, projects and their stacks
+  - Contact info (email/phone/links)
+- `styles.css`
+  - Custom properties under `:root` for colors, spacing, typography
+- `script.js`
+  - Animations (durations/easing), and contact form email config
+
+## 📱 Responsive Details
+
+- Viewport meta added: `width=device-width, initial-scale=1, viewport-fit=cover`
+- Images default to `max-width: 100%` and `height: auto`
+- Fixed navbar spacing handled via `.main-content` top padding
+- On small screens, hero background uses `background-attachment: scroll` to avoid mobile jank
+
+## 📧 Contact Form Email (Google Apps Script)
+
+Real email delivery is supported via Google Apps Script. See `GOOGLE_APPS_SCRIPT_SETUP.md`.
+
+In `script.js`, update the config:
 ```javascript
-// Modify animation durations
-duration: 1.2,  // Change to your preferred speed
-
-// Adjust easing functions
-ease: 'power2.out',  // Try 'elastic.out', 'back.out', etc.
-
-// Customize stagger delays
-stagger: 0.2,  // Adjust timing between elements
+this.appsScriptConfig = {
+    webAppUrl: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec',
+    enabled: true
+};
 ```
+Notes:
+- The project currently has a sample `webAppUrl` enabled; replace it with your own.
+- Requests use `GET` with `mode: 'no-cors'`; CORS warnings can be ignored (emails still send).
 
-## 📱 Responsive Design
+## 🔒 Accessibility & Performance
 
-The portfolio is fully responsive with breakpoints:
-- **Desktop**: 1024px and above
-- **Tablet**: 768px - 1023px
-- **Mobile**: 767px and below
+- Respects `prefers-reduced-motion`
+- Keyboard focus enhancements and focus scaling
+- Parallax and heavy effects reduced on mobile
 
-### Mobile Optimizations
-- Reduced animation complexity
-- Touch-friendly interactions
-- Optimized loading times
-- Simplified navigation
+## ✅ Browser Support
 
-## ♿ Accessibility Features
-
-- **Keyboard Navigation**: Full keyboard support for all interactive elements
-- **Screen Reader**: Semantic HTML and ARIA labels
-- **Reduced Motion**: Respects user's motion preferences
-- **Focus Management**: Clear focus indicators and logical tab order
-- **Color Contrast**: WCAG AA compliant color combinations
-
-## 🎯 Performance Metrics
-
-- **Lighthouse Score**: 95+ across all categories
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Animation Performance**: 60fps on modern devices
-
-## 🔧 Browser Support
-
-- **Chrome**: 90+
-- **Firefox**: 88+
-- **Safari**: 14+
-- **Edge**: 90+
-- **Mobile Browsers**: iOS Safari 14+, Chrome Mobile 90+
-
-## 📦 Dependencies
-
-- **GSAP**: 3.12.2+ (CDN loaded)
-- **ScrollTrigger**: 3.12.2+ (CDN loaded)
-- **TextPlugin**: 3.12.2+ (CDN loaded)
-
-## 🎨 Design System
-
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700, 800
-- **Scale**: Modular scale with consistent sizing
-
-### Color Palette
-- **Primary**: Indigo (#6366f1)
-- **Secondary**: Pink (#ec4899)
-- **Accent**: Cyan (#06b6d4)
-- **Neutrals**: Gray scale from 50 to 900
-
-### Spacing
-- **Base Unit**: 0.25rem (4px)
-- **Scale**: 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32
-
-## 🚀 Deployment
-
-### Static Hosting
-Deploy to any static hosting service:
-- **Vercel**: `vercel --prod`
-- **Netlify**: Drag and drop the folder
-- **GitHub Pages**: Push to repository
-- **AWS S3**: Upload files to S3 bucket
-
-### CDN Optimization
-For production deployment:
-1. Minify CSS and JavaScript
-2. Optimize images (WebP format)
-3. Enable Gzip compression
-4. Use a CDN for global delivery
-
-## 🔍 SEO Optimization
-
-- **Meta Tags**: Complete Open Graph and Twitter Card support
-- **Structured Data**: JSON-LD markup for rich snippets
-- **Sitemap**: XML sitemap for search engines
-- **Robots.txt**: Proper crawling instructions
-
-## 🛡️ Security
-
-- **Content Security Policy**: Prevents XSS attacks
-- **HTTPS**: Secure data transmission
-- **No External Dependencies**: Self-contained for security
-- **Input Validation**: Form validation and sanitization
-
-## 📊 Analytics Integration
-
-Add your analytics tracking:
-```javascript
-// Google Analytics 4
-gtag('config', 'GA_MEASUREMENT_ID');
-
-// Custom event tracking
-gtag('event', 'portfolio_view', {
-    'section': 'hero',
-    'interaction': 'scroll'
-});
-```
-
-## 🎯 Future Enhancements
-
-- **Dark/Light Mode**: Theme switcher with smooth transitions
-- **Multi-language**: Internationalization support
-- **CMS Integration**: Headless CMS for content management
-- **PWA Features**: Offline support and app-like experience
-- **Advanced 3D**: Three.js integration for complex 3D models
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test across browsers
-5. Submit a pull request
+Modern Chromium, Firefox, Safari, and Edge. Mobile Safari/Chrome supported.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT
 
-## 🙏 Acknowledgments
+## 👤 Author
 
-- **GSAP Team**: For the incredible animation library
-- **Google Fonts**: For the Inter typeface
-- **Modern Web Standards**: For making this possible
+Abish R – Full Stack Developer (React, Node.js, .NET)
 
-## 📞 Support
-
-For questions or support:
-- **Email**: hello@portfolio.com
-- **GitHub Issues**: Create an issue for bugs or feature requests
-- **Documentation**: Check this README for common solutions
-
----
-
-**Built with ❤️ for the modern web**
-
-*This portfolio represents the pinnacle of web development, combining cutting-edge technologies with exceptional user experience to create something truly extraordinary.*
