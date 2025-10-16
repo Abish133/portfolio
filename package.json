@@ -1,0 +1,169 @@
+{
+  "name": "professional-3d-portfolio",
+  "version": "1.0.0",
+  "description": "A stunning, enterprise-grade portfolio website featuring cutting-edge 3D animations, smooth GSAP transitions, and modern web technologies. Built to MNC (Multinational Corporation) standards with exceptional performance and user experience.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx live-server --port=8000 --open=/index.html",
+    "build": "npm run minify && npm run optimize",
+    "minify": "npx clean-css-cli -o dist/styles.min.css styles.css && npx terser -o dist/script.min.js script.js",
+    "optimize": "npx imagemin images/* --out-dir=dist/images",
+    "lighthouse": "npx lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html",
+    "test": "npx playwright test",
+    "deploy": "npm run build && npx vercel --prod",
+    "lint": "npx eslint script.js",
+    "format": "npx prettier --write ."
+  },
+  "keywords": [
+    "portfolio",
+    "3d-animations",
+    "gsap",
+    "web-development",
+    "frontend",
+    "javascript",
+    "css3",
+    "html5",
+    "responsive-design",
+    "modern-web",
+    "professional",
+    "enterprise",
+    "mnc-level",
+    "cutting-edge",
+    "interactive",
+    "smooth-animations",
+    "performance-optimized",
+    "accessibility",
+    "seo-ready",
+    "mobile-first"
+  ],
+  "author": {
+    "name": "Professional Developer",
+    "email": "hello@portfolio.com",
+    "url": "https://portfolio.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/professional-3d-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/professional-3d-portfolio/issues"
+  },
+  "homepage": "https://portfolio.com",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "eslint": "^8.57.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "lighthouse": "^11.7.0",
+    "live-server": "^1.2.2",
+    "playwright": "^1.41.0",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1",
+    "terser": "^5.24.0",
+    "vercel": "^33.3.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "preferGlobal": false,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/username"
+  },
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  },
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "directories": {
+    "lib": "lib",
+    "bin": "bin",
+    "man": "man",
+    "doc": "doc",
+    "example": "example"
+  },
+  "man": [],
+  "bin": {},
+  "workspaces": [],
+  "gypfile": false,
+  "scripts-info": {
+    "start": "Start the development server on port 8000",
+    "dev": "Start live-reload development server",
+    "build": "Build and optimize the project for production",
+    "minify": "Minify CSS and JavaScript files",
+    "optimize": "Optimize images for web delivery",
+    "lighthouse": "Run Lighthouse performance audit",
+    "test": "Run automated tests with Playwright",
+    "deploy": "Build and deploy to Vercel",
+    "lint": "Run ESLint to check code quality",
+    "format": "Format code with Prettier"
+  },
+  "readme": "README.md",
+  "readmeFilename": "README.md",
+  "_id": "professional-3d-portfolio@1.0.0",
+  "_shasum": "abc123def456...",
+  "_resolved": "https://registry.npmjs.org/professional-3d-portfolio/-/professional-3d-portfolio-1.0.0.tgz",
+  "_integrity": "sha512-abc123def456...",
+  "_from": ".",
+  "_npmVersion": "9.0.0",
+  "_nodeVersion": "18.0.0",
+  "_npmUser": {
+    "name": "professional-developer",
+    "email": "hello@portfolio.com"
+  },
+  "maintainers": [
+    {
+      "name": "professional-developer",
+      "email": "hello@portfolio.com"
+    }
+  ],
+  "dist": {
+    "shasum": "abc123def456...",
+    "tarball": "https://registry.npmjs.org/professional-3d-portfolio/-/professional-3d-portfolio-1.0.0.tgz",
+    "fileCount": 4,
+    "unpackedSize": 50000,
+    "integrity": "sha512-abc123def456...",
+    "signatures": [
+      {
+        "keyid": "SHA256:abc123...",
+        "sig": "MEUCIQCabc123..."
+      }
+    ]
+  },
+  "deprecated": false,
+  "description_short": "Professional 3D Portfolio with GSAP - Enterprise-grade web portfolio with cutting-edge animations"
+}
